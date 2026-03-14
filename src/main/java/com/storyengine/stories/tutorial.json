@@ -1,0 +1,116 @@
+{
+  "id": "tutorial_story",
+  "name": "Обучение",
+  "author": "StoryEngine",
+  "description": "Обучающий сценарий для новых игроков",
+  "version": "1.0",
+  "startChapter": "tutorial_start",
+  "chapters": [
+    {
+      "id": "tutorial_start",
+      "name": "Добро пожаловать",
+      "description": "Начало обучения",
+      "autoAdvance": true,
+      "nextChapter": "tutorial_combat",
+      "actions": [
+        {
+          "type": "FADE_OUT",
+          "delay": 0,
+          "parameters": {
+            "duration": 10
+          }
+        },
+        {
+          "type": "TELEPORT_PLAYER",
+          "delay": 15,
+          "parameters": {
+            "x": 0, "y": 64, "z": 0,
+            "yaw": 0, "pitch": 0
+          }
+        },
+        {
+          "type": "FADE_IN",
+          "delay": 20,
+          "parameters": {
+            "duration": 20
+          }
+        },
+        {
+          "type": "SHOW_TITLE",
+          "delay": 25,
+          "parameters": {
+            "text": "§b§lОбучение",
+            "fade_in": 10,
+            "stay": 40,
+            "fade_out": 10
+          }
+        },
+        {
+          "type": "SPAWN_NPC",
+          "delay": 70,
+          "parameters": {
+            "npc_id": "tutorial_guide",
+            "name": "Наставник",
+            "x": 3, "y": 64, "z": 0,
+            "skin": "guide"
+          }
+        },
+        {
+          "type": "NPC_SAY",
+          "delay": 90,
+          "parameters": {
+            "npc_name": "Наставник",
+            "message": "Приветствую! Я научу тебя основам.",
+            "color": "b"
+          }
+        },
+        {
+          "type": "DIALOGUE",
+          "delay": 130,
+          "parameters": {
+            "dialogue_id": "tutorial_dialogue"
+          }
+        }
+      ]
+    },
+    {
+      "id": "tutorial_combat",
+      "name": "Боевая подготовка",
+      "autoAdvance": false,
+      "actions": [
+        {
+          "type": "SHOW_TITLE",
+          "delay": 0,
+          "parameters": {
+            "text": "§c§lБой!",
+            "fade_in": 5,
+            "stay": 30,
+            "fade_out": 5
+          }
+        },
+        {
+          "type": "GIVE_ITEM",
+          "delay": 20,
+          "parameters": {
+            "item": "minecraft:stone_sword",
+            "count": 1
+          }
+        },
+        {
+          "type": "EXECUTE_COMMAND",
+          "delay": 40,
+          "parameters": {
+            "command": "summon minecraft:zombie 10 64 0"
+          }
+        },
+        {
+          "type": "START_QUEST",
+          "delay": 50,
+          "parameters": {
+            "quest_id": "tutorial_quest"
+          }
+        }
+      ]
+    }
+  ]
+}
