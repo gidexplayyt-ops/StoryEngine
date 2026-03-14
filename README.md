@@ -84,7 +84,7 @@ StoryEngine это - движок сюжетов для Minecraft 1.20.1 (Forge)
 ## 📖 Примеры
 
 ### История (JSON)
-
+`
 {
   "id": "demo",
   "name": "Демо",
@@ -115,9 +115,9 @@ StoryEngine это - движок сюжетов для Minecraft 1.20.1 (Forge)
     }
   ]
 }
-
+`
 ### Диалог (JSON)
-
+`
 {
   "id": "example_dialogue",
   "name": "Пример",
@@ -136,9 +136,9 @@ StoryEngine это - движок сюжетов для Minecraft 1.20.1 (Forge)
     { "id": "refuse", "speaker": "Проводник", "text": "Возвращайся когда будешь готов." }
   ]
 }
-
+`
 ### Квест (JSON)
-
+`
 {
   "id": "kill_zombies",
   "name": "Охота",
@@ -154,18 +154,18 @@ StoryEngine это - движок сюжетов для Minecraft 1.20.1 (Forge)
   "rewards": ["minecraft:diamond:3"],
   "onComplete": "chapter:ch2"
 }
-
+`
 ### Текстовый скрипт (.script)
 
 # Файл: storyengine/scripts/test.script
-0 FREEZE_PLAYER
+`0 FREEZE_PLAYER
 0 FADE_OUT duration=5
 5 TELEPORT_PLAYER x=0 y=64 z=0
 8 FADE_IN duration=20
 8 SHOW_TITLE text="§6§lПривет!" fade_in=10 stay=40 fade_out=10
 40 UNFREEZE_PLAYER
 45 SPAWN_NPC npc_id=test name=Тест x=3 y=64 z=0 dialogue=example_dialogue
-100 END_STORY
+100 END_STORY`
 
 ## ⚡ Типы действий
 
@@ -246,7 +246,7 @@ StoryEngine это - движок сюжетов для Minecraft 1.20.1 (Forge)
 
 ## 🔧 Fluent API
 
-ScriptContext.createStory("my_story", "Моя история")
+`ScriptContext.createStory("my_story", "Моя история")
     .author("Author")
     .chapter("intro", "Введение")
         .fadeOut(5)
@@ -256,7 +256,7 @@ ScriptContext.createStory("my_story", "Моя история")
         .spawnNPC("guide", "Проводник", 103, 64, 200)
         .dialogue("my_dialogue")
     .endChapter()
-    .buildAndRegister();
+    .buildAndRegister();`
 
 ## 📊 Справочник
 
